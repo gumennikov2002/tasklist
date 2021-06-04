@@ -7,6 +7,11 @@
     transition: 0.15s;
 }
 
+header strong {
+    color: #fff;
+    background: #000;
+}
+
 .reg-links {
     margin-top: 10px;
 }

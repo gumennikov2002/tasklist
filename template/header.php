@@ -9,7 +9,7 @@
     <body>
         <!-- Верхний контейнер header -->
         <header class="container mt-3 d-flex justify-content-between">
-            <h1>TaskList</h1>
+            <h1><strong>Task</strong>List</h1>
             <div class="reg-links">
                 <a href="login.php">Войти</a>
                 <a href="reg.php">Регистрация</a>

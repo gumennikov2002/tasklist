@@ -21,7 +21,7 @@
                 <input type="password" name="password_repeat" class="form-control" placeholder="Повторите пароль">
             </div>
         </div>
-        <input type="submit" class="btn btn-success mt-2" name="submit">
+        <input type="submit" class="btn btn-success mt-2" value="Зарегистрироваться" name="submit">
         <?php
             if(isset($_SESSION['r_msg']))
             {

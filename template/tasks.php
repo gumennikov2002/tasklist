@@ -33,6 +33,16 @@
         {
             while($row = mysqli_fetch_array($show_task))
             {
+
+                switch($row[status])
+                {
+                    case '0' : $status = "Готов";
+                    case '0' : $btn_status = "success";
+                    break;
+                    case '1' : $status = "Не готов";
+                    case '1' : $btn_status = "warning";
+                }
+
                 echo "
                 <div class='card mt-3'>
                     <div class='card-body'>
@@ -40,8 +50,8 @@
                             ".$row['text']."
                         </div>
                         <div class=''>
-                            <a class='btn btn-danger mt-2 fr' href='#'>Удалить</a>
-                            <a class='btn btn-success mt-2 fr' href='#'>Готово</a>
+                            <a class='btn btn-danger mt-2 fr' href='../engine/remove_task.php?del_id=".$row[id]."'>Удалить</a>
+                            <a class='btn btn-".$btn_status." mt-2 fr' href='../engine/change_status.php?status=".$row[status]."&id=".$row[id]."'>".$status."</a>
                         </div>
                     </div>
                 </div>

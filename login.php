@@ -16,7 +16,7 @@
                 <input type="password" name="password" class="form-control" placeholder="Пароль">
             </div>
         </div>
-        <input type="submit" name="submit" class="btn btn-success mt-2">
+        <input type="submit" name="submit" value="Войти" class="btn btn-success mt-2">
         <?php
             if(isset($_SESSION['r_msg']))
             {

@@ -3,7 +3,7 @@
     include "template/header.php";
 ?>
 <center>
-<h2 class="mt-5">Авторизация</h2>
+<h2 class="mt-100">Авторизация</h2>
 <div class="container w400">
     <form action="engine/authtorization.php" method="POST">
         <div class="row mt-3">

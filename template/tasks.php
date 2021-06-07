@@ -3,21 +3,21 @@
     require_once "engine/db.php";
     $uid = $_SESSION['user']['id'];
 ?>
- <div class="container mt-5">
+ <div class="container mt-100">
     <form action="../engine/add_task.php" method="POST">
         <div class="d-flex">
-            <input type="text" name="task_text" class="form-control" placeholder="Задача">
-            <input class="btn btn-success" name="submit" type="submit" value="+">
+            <input type="text" name="task_text" class="form-control form-task-control" placeholder="Задача">
+            <input class="btn btn-success btn-radiused" name="submit" type="submit" value="+">
         </div>
         <?php
                 if(isset($_SESSION['r_msg']))
                 {
-                    echo "<div class='alert alert-danger mt-2' role='alert'>".$_SESSION['r_msg']."</div>";
+                    echo "<div class='alert alert-danger mt-3' role='alert'>".$_SESSION['r_msg']."</div>";
                     unset($_SESSION['r_msg']);
                 }
                 elseif(isset($_SESSION['s_msg']))
                 {
-                    echo "<div class='alert alert-success mt-2' role='alert'>".$_SESSION['s_msg']."</div>";
+                    echo "<div class='alert alert-success mt-3' role='alert'>".$_SESSION['s_msg']."</div>";
                     unset($_SESSION['s_msg']);
                 }
             ?>

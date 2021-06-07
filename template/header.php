@@ -5,13 +5,14 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../lib/style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="../lib/style.css">
         <title>TaskList</title>
     </head>
     <body>
         <!-- Верхний контейнер header -->
-        <header class="container mt-3 d-flex justify-content-between">
+        <div class="full-header container-fluid">
+        <header class="container pt-3 pb-2 d-flex justify-content-between">
             <h1><strong>Task</strong>List</h1>
             <?php
                 if(!isset($_SESSION['user']))
@@ -36,3 +37,4 @@
             ?>
 
         </header>
+            </div>

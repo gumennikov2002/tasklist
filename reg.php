@@ -3,7 +3,7 @@
     include "template/header.php";    
 ?>
 <center>
-<h2 class="mt-5">Регистрация</h2>
+<h2 class="mt-100">Регистрация</h2>
 <div class="container w400">
     <form action="engine/registration.php" method="POST">
         <div class="row mt-3">

@@ -36,6 +36,6 @@ header strong {
     margin-left: 5px;
 }
 
-.custom-input input {
+.w400, .w400 input {
     width: 400px;
 }

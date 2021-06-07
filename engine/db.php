@@ -4,5 +4,5 @@
     $db_login = "root";
     $db_pass = "root";
 
-    $db = mysqli_connect($host, $db_login, $db_pass, $db_name);
+    $db = mysqli_connect($db_host, $db_login, $db_pass, $db_name);
 ?>

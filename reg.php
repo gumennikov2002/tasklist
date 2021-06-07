@@ -1,7 +1,10 @@
-<?include "template/header.php"?>
+<?php
+    session_start();
+    include "template/header.php";    
+?>
 <center>
 <h2 class="mt-5">Регистрация</h2>
-<div class="container custom-input">
+<div class="container w400">
     <form action="engine/registration.php" method="POST">
         <div class="row mt-3">
             <div class="col">
@@ -18,7 +21,17 @@
                 <input type="password" name="password_repeat" class="form-control" placeholder="Повторите пароль">
             </div>
         </div>
+        <input type="submit" class="btn btn-success mt-2" name="submit">
+        <?php
+            if(isset($_SESSION['r_msg']))
+            {
+                echo "<div class='alert alert-danger w400 mt-2' role='alert'>".$_SESSION['r_msg']."</div>";
+            }
+            elseif(isset($_SESSION['s_msg']))
+            {
+                echo "<div class='alert alert-success w400 mt-2' role='alert'>".$_SESSION['s_msg']."</div>";
+            }
+        ?>
     </form>
-    <a href="#" class="btn btn-success mt-2">Зарегистрироваться</a>
 </div>
 </center>

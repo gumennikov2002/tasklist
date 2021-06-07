@@ -61,7 +61,7 @@ header strong {
     box-shadow: 0px 4px 37px -7px rgba(0, 0, 0, 0.15);
 }
 
-.card, .card-body, {
+.card, .card-body {
     border-radius: 20px 20px 0px 20px;
 }
 

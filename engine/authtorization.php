@@ -8,12 +8,15 @@
     $link_home = "<script>window.location.href='../index.php'</script>";
 
     $query_user = mysqli_query($db, "SELECT * FROM `users` WHERE login = '$login' and password = '$hash_password'");
+    $fetch_user = mysqli_fetch_array($query_user);
+    $id = $fetch_user[0];
 
     if(!empty($login) and !empty($password))
     {
         if(mysqli_num_rows($query_user) > 0)
         {
             $_SESSION['user']= [
+                'id' => $id,
                 'login' => $login
             ];
             echo $link_home;

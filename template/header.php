@@ -28,7 +28,8 @@
                     echo "
                         <div class='reg-links'>
                             Добро пожаловать, <b>".$_SESSION['user']['login']."</b>
-                            <a href='reg.php'>Выйти</a>
+                            <sup>(id: ".$_SESSION['user']['id'].")</sup>
+                            <a href='engine/logout.php'>Выйти</a>
                         </div>
                     ";
                 }

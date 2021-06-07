@@ -26,10 +26,12 @@
             if(isset($_SESSION['r_msg']))
             {
                 echo "<div class='alert alert-danger w400 mt-2' role='alert'>".$_SESSION['r_msg']."</div>";
+                unset($_SESSION['r_msg']);
             }
             elseif(isset($_SESSION['s_msg']))
             {
                 echo "<div class='alert alert-success w400 mt-2' role='alert'>".$_SESSION['s_msg']."</div>";
+                unset($_SESSION['s_msg']);
             }
         ?>
     </form>

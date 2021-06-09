@@ -5,7 +5,8 @@
     function redir($link)
     {
         // echo "<script>window.location.href='".$link."'</script>";
-        header("Location $link");
+        header("Location: $link");
+        exit;
     }
 
 

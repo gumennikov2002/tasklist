@@ -1,5 +1,7 @@
 <?php
     session_start();
+    require "funcs.php";
     unset($_SESSION['user']);
-    echo "<script>window.location.href='../index.php'</script>";
+    $link = "../index.php";
+    redir($link);
 ?>

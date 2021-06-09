@@ -8,12 +8,12 @@
 
     if($status == 0)
     {
-        $query = mysqli_query($db, "UPDATE `tasks` SET `status` = '1' WHERE `tasks`.`id` = $id;");
+        $query = $db->query("UPDATE `tasks` SET `status` = '1' WHERE `tasks`.`id` = $id;");
         redir($link);
     }
     elseif($status == 1)
     {
-        $query = mysqli_query($db, "UPDATE `tasks` SET `status` = '0' WHERE `tasks`.`id` = $id;");
+        $query = $db->query("UPDATE `tasks` SET `status` = '0' WHERE `tasks`.`id` = $id;");
         redir($link);
     }
 ?>

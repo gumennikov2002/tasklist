@@ -8,7 +8,7 @@
 
     if(!empty($task_text))
     {
-        $query = mysqli_query($db, "INSERT INTO `tasks` (`id`, `user_id`, `text`, `status`) VALUES (NULL, '$uid', '$task_text', '0')");
+        $query = $db->query("INSERT INTO `tasks` (`id`, `user_id`, `text`, `status`) VALUES (NULL, '$uid', '$task_text', '0')");
         $_SESSION['s_msg'] = "Задача успешно добавлена";
         redir($link);
     }

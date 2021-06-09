@@ -2,17 +2,20 @@
     session_start();
     require_once "db.php";
     require "funcs.php";
-    $login = $_POST['login'];
-    $password = $_POST['password'];
+    $login = ($_POST['login']) ? $db->real_escape_string(trim($_POST['login'])) : '';
+    $password = ($_POST['password']) ? $db->real_escape_string(trim($_POST['password'])) : '';
     $hash_password = md5($password);
 
-    $query_user = mysqli_query($db, "SELECT * FROM `users` WHERE login = '$login' and password = '$hash_password'");
-    $fetch_user = mysqli_fetch_array($query_user);
-    $id = $fetch_user[0];
+    $query_user = $db->prepare("SELECT * FROM `users` WHERE login = ? and password = ?");
+    $query_user->bind_param("ss", $login, $hash_password);
+    $query_user->execute();
+    $query_user = $query_user -> get_result();
+    $fetch_user = $query_user->fetch_assoc();
+    $id = $fetch_user[id];
 
     if(!empty($login) and !empty($password))
     {
-        if(mysqli_num_rows($query_user) > 0)
+        if($query_user->num_rows > 0)
         {
             $_SESSION['user']= [
                 'id' => $id,

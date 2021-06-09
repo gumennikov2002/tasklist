@@ -2,9 +2,10 @@
     session_start();
     require_once "db.php";
     require "funcs.php";
-    $login = $_POST['login'];
-    $password = $_POST['password'];
-    $password_repeat = $_POST['password_repeat'];
+    $id = NULL;
+    $login = ($_POST['login']) ? $db->real_escape_string(trim($_POST['login'])) : '';
+    $password = ($_POST['password']) ? $db->real_escape_string(trim($_POST['password'])) : '';
+    $password_repeat = ($_POST['password_repeat']) ? $db->real_escape_string(trim($_POST['password_repeat'])) : '';
     $link = "../reg.php";
 
     if(!empty($login) and !empty($password) and !empty($password_repeat))
@@ -21,14 +22,13 @@
             else
             {
                 $hash_password = md5($password);
-                $query = mysqli_query($db, "INSERT INTO `users` (`id`, `login`, `password`) VALUES (NULL, '$login', '$hash_password')");
-                if($query)
-                {
-                    unset($_SESSION['r_msg']);
-                    $_SESSION['s_msg'] = "Успешная регистрация";
-                    redir($link);
-
-                }
+                $query = $db->prepare("INSERT INTO `users` (`id`, `login`, `password`) VALUES (?, ?, ?)");
+                $query->bind_param("iss", $id, $login, $hash_password);
+                $query->execute();
+                $query = $query->get_result();
+                unset($_SESSION['r_msg']);
+                $_SESSION['s_msg'] = "Успешная регистрация";
+                redir($link);
             }
 
         }
